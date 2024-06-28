@@ -53,9 +53,4 @@ export class BankAccount extends BankAccountInterface {
 			balance: this.balance,
 		};
 	}
-	cancel() {
-		if (this.isOperationInProgress) {
-			this.isOperationInProgress = false;
-		}
-	}
 }

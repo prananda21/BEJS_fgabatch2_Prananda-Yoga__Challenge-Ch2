@@ -36,14 +36,6 @@ export class BankAccountInterface {
 
 	/**
 	 * @abstract
-	 * @returns {void}
-	 */
-	cancel() {
-		throw new Error("Method must be implemented");
-	}
-
-	/**
-	 * @abstract
 	 * @returns {string}
 	 */
 	profile() {

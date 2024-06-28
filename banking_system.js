@@ -101,15 +101,6 @@ class BankSystem {
 			alert(error.message);
 		}
 	}
-
-	static cancelProcess() {
-		try {
-			user.cancel();
-			return;
-		} catch (error) {
-			alert(error.message);
-		}
-	}
 }
 
 async function main() {
@@ -118,8 +109,12 @@ async function main() {
 	let choice;
 	while (true) {
 		choice = prompt(
-			"Choose an operation:\n1. Deposit\n2. Withdraw\n3. Get Info\n4. Cancel\n5. Exit"
+			"Choose an operation:\n1. Deposit\n2. Withdraw\n3. Get Info\n4. Exit"
 		);
+
+		if (choice === null) {
+			break;
+		}
 
 		switch (choice) {
 			case "1":
@@ -132,9 +127,6 @@ async function main() {
 				await BankSystem.getInfo();
 				break;
 			case "4":
-				BankSystem.cancelProcess();
-				break;
-			case "5":
 				return;
 			default:
 				alert("Invalid choice");

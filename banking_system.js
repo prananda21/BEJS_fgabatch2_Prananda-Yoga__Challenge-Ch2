@@ -7,12 +7,16 @@ class BankSystem {
 		let username;
 		while (true) {
 			username = prompt(`Input your name`);
-			if (username === undefined || username === "") {
+			if (
+				username === undefined ||
+				username === "" ||
+				typeof username !== "string" ||
+				!isNaN(username)
+			) {
 				alert("Invalid username");
-				return;
 			} else if (username === null) {
 				// prompt canceled
-				return;
+				break;
 			} else {
 				break;
 			}
